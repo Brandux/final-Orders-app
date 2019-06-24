@@ -4,7 +4,7 @@ import unittest
 from flask.cli import FlaskGroup
 
 from project import create_app, db  # nuevo
-from project.api.models import Order
+from project.api.models import Customers
 
 app = create_app()
 cli = FlaskGroup(create_app=create_app)

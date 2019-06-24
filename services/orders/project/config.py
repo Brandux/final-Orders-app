@@ -6,12 +6,15 @@ class BaseConfig:
    """Configuracion base"""
    TESTING = False
    SQLALCHEMY_TRACK_MODIFICATIONS = False  # nuevo
-   SECRET_KEY = 'tu_seña  # nuevo
+   SECRET_KEY = 'tu_seña'  # nuevo
+   # DEBUG_TB_ENABLED = False  # new
+
 
 
 class DevelopmentConfig(BaseConfig):
    """Configuraccion de desarrollo"""
    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')  # nuevo
+   DEBUG_TB_ENABLED = True  # new
 
 
 class TestingConfig(BaseConfig):

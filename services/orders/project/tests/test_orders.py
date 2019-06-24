@@ -17,6 +17,22 @@ class TestUserService(BaseTestCase):
         self.assertIn('pong!', data['message'])
         self.assertIn('success', data['status'])
 
+    # para la tabla de customers
+    def test_add_customers(self):
+        """ Agregando un nuevo cliente"""
+        with self.client:
+            response = self.client.post(
+                '/customer',
+                data = json.dumps({
+                    'name ':'josVillegas'
+                }),
+                content_type = 'application/json',
+            )
+            data = json.loads(response.data.decore())
+            self.assertEqual(response.status_code, 201)
+            self.assertIn('josVillegas', data['message'])
+            self.assertIn('succes', data['status'])
+
 
 if __name__ == '__main__':
     unittest.main()

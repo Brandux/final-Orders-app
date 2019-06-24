@@ -1,26 +1,8 @@
 # services/users/project/api/models.py
 from sqlalchemy.sql import func
-
+from datetime import datetime
 from project import db
 
-
-
-
-
-class User(db.Model):
-    __tablename__ = 'campeonato'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    partidos = db.Column(db.Integer(5), unique=True, nullable=False)
-    
-    def to_json(self):
-        return {
-            'id': self.id,
-            'partidos': self.partidos
-        }
-
-    def __init__(self, partidos):
-        self.partidos = partidos
-        
 #  modelos de orders
 class Customers(db.Model):
     __tablename__ = 'customers'
@@ -37,9 +19,8 @@ class Customers(db.Model):
             'orders': self.orders,
         }
 
-    def __init__(self, name, orders):
+    def __init__(self, name):
         self.name = name
-        self.orders = orders
 
 
 class Product(db.Model):
