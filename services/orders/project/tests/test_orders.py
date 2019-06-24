@@ -18,17 +18,17 @@ class TestUserService(BaseTestCase):
         self.assertIn('success', data['status'])
 
     # para la tabla de customers
-    def test_add_customers(self):
+    def test_add_customer(self):
         """ Agregando un nuevo cliente"""
         with self.client:
             response = self.client.post(
-                '/customer',
+                '/customers',
                 data = json.dumps({
                     'name ':'josVillegas'
                 }),
                 content_type = 'application/json',
             )
-            data = json.loads(response.data.decore())
+            data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
             self.assertIn('josVillegas', data['message'])
             self.assertIn('succes', data['status'])

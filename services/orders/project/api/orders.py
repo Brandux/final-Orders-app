@@ -12,7 +12,7 @@ def ping_pong():
         'message': 'pong!'
     })
 
-@orders_blueprint.route('/customer', methods=['POST'])
+@orders_blueprint.route('/customers', methods=['POST'])
 def add_customer():
     post_data=request.get_json()
     name=post_data.get('name')
