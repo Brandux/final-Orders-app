@@ -14,9 +14,7 @@ class Customers(db.Model):
     def to_json(self):
         return {
             'id': self.id,
-            'name': self.name,
-            'active': self.active,
-            'orders': self.orders,
+            'name': self.name
         }
 
     def __init__(self, name):
@@ -34,13 +32,10 @@ class Product(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'active': self.active,
-            'items': self.items,
         }
 
-    def __init__(self, name, items):
+    def __init__(self, name):
         self.name = name
-        self.items = items
 
 
 class Order(db.Model):
@@ -55,13 +50,11 @@ class Order(db.Model):
             'id': self.id,
             'customer_id': self.customer_id,
             'date': self.date,
-            'items': self.items,
         }
 
-    def __init__(self, customer_id, date, items):
+    def __init__(self, customer_id, date):
         self.customer_id    = customer_id
         self.date           = date
-        self.items          = items
 
 
 class Item(db.Model):
