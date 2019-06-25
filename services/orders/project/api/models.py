@@ -8,8 +8,8 @@ class Customers(db.Model):
     __tablename__ = 'customers'
     id      = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name    = db.Column(db.String(150), unique=True, nullable=False)
-    active = db.Column(db.Boolean(), default=True, nullable=False)
-    orders  = db.relationship('Orders', backref='customer', lazy='dynamic')
+    # active = db.Column(db.Boolean(), default=True, nullable=False)
+    orders  = db.relationship('Order', backref='customer', lazy='dynamic')
 
     def to_json(self):
         return {
@@ -25,7 +25,7 @@ class Product(db.Model):
     __tablename__ = 'products'
     id      = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name    = db.Column(db.String(150), unique=True, nullable=False)
-    active  = db.Column(db.Boolean(), default=True, nullable=False)
+    # active  = db.Column(db.Boolean(), default=True, nullable=False)
     items   = db.relationship('Item', backref='product', lazy='dynamic')
 
     def to_json(self):

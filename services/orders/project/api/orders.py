@@ -38,3 +38,40 @@ def add_customer():
     except exc.IntegrityError:
         db.session.rollback()
         return jsonify(response_object), 400
+
+
+@orders_blueprint.route('/curtomers/<customers_id>', methods=['GET'])
+def get_single_custormer(customer_id):
+    """Obtener detalles de usuario unico"""
+    response_object = {
+        'estado': 'fallo',
+        'mensaje': 'EL usuario no existe'
+    }
+    try: 
+        customer = Customers.query.filter_by(id=int(customer_id)).first()
+        if not customer:
+            return jsonify(response_object), 404
+        else:
+            response_object = {
+                'estado': 'satisfactoria',
+                'data': {
+                    'id': customer.id,
+                    'name': customer.name
+                }
+            }
+            return jsonify(response_object), 200
+    except ValueError:
+        return jsonify(response_object), 404
+
+
+@orders_blueprint.route('/customers', methods=['GET'])
+def get_all_customers():
+    """Obteniendo todos los usuarios"""
+    response_object = {
+        'estado': 'satisfactorio',
+        'data': {
+            'customers': [customer.json() for customer in Customers.query.all()]
+        }
+    }
+    return jsonify(response_object), 200
+        
