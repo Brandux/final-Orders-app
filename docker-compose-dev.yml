@@ -2,6 +2,16 @@ version: '3.7'
 
 services:
 
+ nginx:
+   build:
+     context: ./services/nginx
+     dockerfile: Dockerfile-dev
+   restart: always
+   ports:
+     - 80:80
+   depends_on:
+     - orders
+
  orders:
    build:
      context: ./services/orders
@@ -28,3 +38,4 @@ services:
    environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
