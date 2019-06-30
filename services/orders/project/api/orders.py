@@ -70,7 +70,7 @@ def get_all_customers():
     response_object = {
         'estado': 'satisfactorio',
         'data': {
-            'customers': [customer.json() for customer in Customers.query.all()]
+            'customers': [customer.to_json() for customer in Customers.query.all()]
         }
     }
     return jsonify(response_object), 200
