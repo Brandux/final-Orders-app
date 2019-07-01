@@ -1,20 +1,20 @@
-# services/users/project/config.py
+# services/pedidos/project/config.py
 
-import os  # nuevo
+
+import os  #nuevo
+
+
 
 class BaseConfig:
    """Configuracion base"""
    TESTING = False
    SQLALCHEMY_TRACK_MODIFICATIONS = False  # nuevo
-   SECRET_KEY = 'tu_seña'  # nuevo
-   # DEBUG_TB_ENABLED = False  # new
-
+   SECRET_KEY = "my_secretkey"
 
 
 class DevelopmentConfig(BaseConfig):
    """Configuraccion de desarrollo"""
    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')  # nuevo
-   DEBUG_TB_ENABLED = True  # new
 
 
 class TestingConfig(BaseConfig):

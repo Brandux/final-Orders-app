@@ -1,81 +1,89 @@
-# services/users/project/tests/test_orders.py
+# services/pedidos/project/tests/test_pedidos.py
+
 
 import json
 import unittest
-from project import db 
-from project.api.models import Customers 
+from project import db
+from project.api.models import Customer
 from project.tests.base import BaseTestCase
 
 
 def add_customer(name):
-    customer = Customers(name=name)
+    customer = Customer(name=name)
     db.session.add(customer)
     db.session.commit()
     return customer
 
 
-class TestUserService(BaseTestCase):
+class TestPedidosService(BaseTestCase):
     """Tests for the Users Service."""
 
-    def test_users(self):
+    def test_pedidos(self):
         """Ensure the /ping route behaves correctly."""
-        response = self.client.get('/orders/ping')
+        response = self.client.get('/pedidos/ping')
         data = json.loads(response.data.decode())
         self.assertEqual(response.status_code, 200)
-        self.assertIn('pong!', data['message'])
+        self.assertIn('pong', data['message'])
         self.assertIn('success', data['status'])
 
-    # para la tabla de customers
     def test_add_customer(self):
-        """ Agregando un nuevo cliente"""
+        """Agregando un nuevo cliente."""
         with self.client:
             response = self.client.post(
                 '/customers',
-                data = json.dumps({
-                    'name ':'josVillegas'
+                data=json.dumps({
+                    'name': 'brandux'
+                }),
+                content_type = 'application/json',
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 201)
+            self.assertIn('brandux ha sido agregado !', data['message'])
+            self.assertIn('success', data['status'])
+
+    def test_add_customer_invalid_json(self):
+        """Asegurando que se produzca un error si el objeto json esta vacío."""
+        with self.client:
+            response = self.client.post(
+                '/customers',
+                data=json.dumps({}),
+                content_type = 'application/json',
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 400)
+            self.assertIn('Carga invalida.', data['message'])
+            self.assertIn('failed', data['status'])
+    
+    def test_add_customer_duplicate_name(self):
+        """Asegurando que se produzca un error si el nombre ya existe."""
+        with self.client:
+            response = self.client.post(
+                '/customers',
+                data=json.dumps({
+                    'name':'brandux'
+                }),
+                content_type = 'application/json',
+            )
+            response = self.client.post(
+                '/customers',
+                data=json.dumps({
+                    'name':'brandux'
                 }),
                 content_type = 'application/json',
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
-            self.assertIn('carga Invalida', data['message'])
-            self.assertIn('fallo', data['status'])
-
-    def test_add_customer_invalid_json(self):
-        """Asegurando que se produzca un error si el objeto json esta vacio"""
-        with self.client:
-            response = self.client.post(
-                '/customers',
-                data=json.dumps({}),
-                content_type='application/json',
-            )
-            data = json.loads(response.data.decode())
-            self.assertEqual(response.status_code, 400)
-            self.assertIn('carga Invalida', data['message'])
-            self.assertIn('fallo', data['status'])
-
-    def test_add_customer_json_keys(self):
-        """Asegurando que se produzca un error si el objeto json
-        no tiene una clave username"""
-        with self.client:
-            response = self.client.post(
-                '/customers',
-                data=json.dumps({'name': 'josVillegas'}),
-                content_type='application/json',
-            )
-            data=json.loads(response.data.decode())
-            self.assertEqual(response.status_code, 201)
-            self.assertIn('josVillegas was added!', data['message'])
-            self.assertIn('success', data['status'])
+            self.assertIn('Lo siento. El usuario ya existe', data['message'])
+            self.assertIn('failed', data['status'])
 
     def test_single_customer(self):
         """Asegurando que obtenga un customer de forma correcta"""
-        customer = add_customer(name='josVillegas')
+        customer = add_customer(name="brandux")
         with self.client:
             response = self.client.get(f'/customers/{customer.id}')
-            data=json.loads(response.data.decode())
+            data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertIn('josVillegas', data['data']['name'])
+            self.assertIn('brandux', data['data']['name'])
             self.assertIn('success', data['status'])
 
     def test_single_customer_no_id(self):
@@ -84,8 +92,8 @@ class TestUserService(BaseTestCase):
             response = self.client.get('/customers/blah')
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 404)
-            self.assertIn('El usuario no existe', data['message'])
-            self.assertIn('fallo', data['status'])
+            self.assertIn('El customer no existe', data['message'])
+            self.assertIn('failed', data['status'])
  
     def test_single_customer_incorrect_id(self):
         """Asegurando de que se arroje un error si la identificación no existe."""
@@ -93,20 +101,20 @@ class TestUserService(BaseTestCase):
             response = self.client.get('/customers/999')
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 404)
-            self.assertIn('El usuario no existe', data['message'])
-            self.assertIn('fallo', data['status'])
+            self.assertIn('El customer no existe', data['message'])
+            self.assertIn('failed', data['status'])
 
-    def test_all_customers(self):
+    def test_all_customer(self):
         """ Asegurando de que todos los usuarios se comporten correctamente."""
-        add_customer('abel')
-        add_customer('fredy')
+        add_customer('brandux')
+        add_customer('didier')
         with self.client:
             response = self.client.get('/customers')
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(data['data']['customers']), 2)
-            self.assertIn('abel', data['data']['customers'][0]['name'])
-            self.assertIn('fredy', data['data']['customers'][1]['name'])   
+            self.assertEqual(len(data['data']['customer']), 2)
+            self.assertIn('brandux', data['data']['customer'][0]['name'])
+            self.assertIn('didier', data['data']['customer'][1]['name'])   
             self.assertIn('success', data['status'])
 
 
