@@ -17,7 +17,7 @@ export class TableMonitoringComponent implements OnInit {
 
   ngOnInit() {
     this.monitoringService.inicial().subscribe(rep => {
-      console.log(rep);
+      console.log('asddsa', rep);
     });
   }
 
