@@ -1,0 +1,24 @@
+@import '~@nebular/theme/styles/theming';
+@import '~lamb-web-lib/lib/styles/themes';
+
+$nb-enabled-themes: (lamb-default, lamb-corporate,
+    lamb-emperor, lamb-grapevine, lamb-campfire,
+    lamb-denim, lamb-earth, lamb-earth,
+    lamb-ming, lamb-tree-frog
+);
+
+$grapevine: (
+    sidebar-header-gap: 1.8rem,
+);
+
+$nb-themes: nb-register-theme((), lamb-default, lamb-default);
+$nb-themes: nb-register-theme((), lamb-corporate, lamb-default);
+
+$nb-themes: nb-register-theme($theme-emperor, lamb-emperor, lamb-default);
+$nb-themes: nb-register-theme(map-merge($theme-grapevine, $grapevine), lamb-grapevine, lamb-default);
+
+$nb-themes: nb-register-theme($theme-campfire, lamb-campfire, lamb-default);
+$nb-themes: nb-register-theme($theme-denim, lamb-denim, lamb-default);
+$nb-themes: nb-register-theme($theme-earth, lamb-earth, lamb-default);
+$nb-themes: nb-register-theme($theme-ming, lamb-ming, lamb-default);
+$nb-themes: nb-register-theme($theme-tree-frog, lamb-tree-frog, lamb-default);

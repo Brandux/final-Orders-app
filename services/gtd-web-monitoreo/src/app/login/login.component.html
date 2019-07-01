@@ -1,0 +1,32 @@
+<div class="lamb-all form-group">
+  <div class="content-login-page">
+      <div class="logo" routerLink="/">
+         <img class="full-color"  src="assets/logos/logo_upeu.png" alt="Logo"> 
+          <br>
+      </div>
+      <div class="logo" routerLink="/" class="">
+          <!-- <img class="lamb-connet" (click)="logginWithErpAuth()" src="assets/images/apps/conectate.png" alt="Lamb"><br> -->
+          
+          <br>
+          
+          <small >
+                <form  [formGroup]="loginForm" novalidate>
+                  <input type="text" name="username"  formControlName="username" autofocus placeholder="Usuario">
+                  <br>
+                  <input type="password" name="password"  formControlName="password" autofocus placeholder="Contraseña">
+                  <br>
+                    <button class="enter btn btn-primary btn-large" (click)="onlogin()" type="submit">
+                        INGRESAR
+                      </button>
+                <a href="" class="forgot-password">Recuperar contraseña</a>
+            </form>
+            </small>
+        
+        </div>
+  </div>
+  
+  <div class="logo-iasd right" >
+          <img  class="lamb-icon iasdLogo" src="assets/logos/logo_iasd.png" alt="Logo"> 
+  </div>
+ 
+</div>

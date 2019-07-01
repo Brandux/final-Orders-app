@@ -1,0 +1,62 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <gtd-header-menu ></gtd-header-menu>
+  </nb-layout-header>
+  <nb-layout-column>
+
+
+<div class="row gtd-fondo">
+  <div class="col-xl-4">
+      <nb-card [routerLink]="['/flujo']">
+        <nb-card-body>
+          <div class="table-responsive">
+            <i id="icon" class="fa fa-sitemap" ></i>
+            <hr class="col-md-6">
+            <label id="gtd-title-card">Catálogo de Servicios</label>
+              <p id="gtd-content-card"><em>Módulo donde se muestra cada trámite
+                que existe en el área de Secretaría General</em>
+              </p>
+              <i id="flecha" class="fa fa-angle-right"></i>
+              <i id="circle" class="fa fa-circle"></i>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col-xl-4">
+        <nb-card [routerLink]="['/solicitar']">
+          <nb-card-body>
+            <div class="table-responsive">
+              <i id="icon" class="fa fa-file-text" ></i>
+              <hr class="col-md-6">
+              <label id="gtd-title-card">Registro Solicitud</label>
+                <p id="gtd-content-card"><em>Módulo para solicitar todo tipo de documentos 
+                    además de pagos en ellos</em>
+                </p>
+                <i id="flecha" class="fa fa-angle-right"></i>
+                <i id="circle" class="fa fa-circle"></i>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-xl-4">
+          <nb-card [routerLink]="['/home']">
+            <nb-card-body>
+              <div class="table-responsive">
+                <i id="icon" class="fa fa-search" ></i>
+                <hr class="col-md-6">
+                <label id="gtd-title-card">Monitoreo de Documentos</label>
+              <p id="gtd-content-card"><em>Módulo para conocer en que áreas se encuentran
+                    los documentos tramitados</em>
+              </p>
+              <i id="flecha" class="fa fa-angle-right"></i>
+              <i id="circle" class="fa fa-circle"></i>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </div>
+</div>
+
+    <gtd-identity-iasd-logo-menu ></gtd-identity-iasd-logo-menu>
+  </nb-layout-column>
+</nb-layout>
+ 

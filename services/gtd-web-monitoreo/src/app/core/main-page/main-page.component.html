@@ -1,0 +1,28 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <gtd-header ></gtd-header>
+  </nb-layout-header>
+
+  <!-- sidebar -->
+  <nb-sidebar class="menu-sidebar" responsive letf>
+
+    <!-- header -->
+    <nb-sidebar-header>
+      <gtd-sidebar-header></gtd-sidebar-header>
+    </nb-sidebar-header>
+
+    <!-- body -->
+    <gtd-sidebar-content></gtd-sidebar-content>
+
+    <!-- footer -->
+    <nb-sidebar-footer fixed [ngStyle]="{'text-align': 'center'}">
+      <gtd-sidebar-footer></gtd-sidebar-footer>
+    </nb-sidebar-footer>
+
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+    <gtd-identity-iasd-logo ></gtd-identity-iasd-logo>
+  </nb-layout-column>
+</nb-layout>

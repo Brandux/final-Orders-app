@@ -1,0 +1,179 @@
+
+// esto va dentro de un componente
+    nb-card{
+        border-radius: 0px 30px;
+        width: 80%;
+        height: 89%;
+        margin: 12%;
+        cursor: pointer;
+    }
+    nb-card-body{
+        margin-top: 50px;
+    }
+
+//estilos de hr
+hr{
+    margin-top: 5%;
+    background-color: #992E45;
+}
+
+//estilos del titulo del card
+#gtd-title-card{
+    color: #992E45;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+//estilos del cantendio del card
+#gtd-content-card{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+
+//estilos del icono de catálogo
+nb-card nb-card-body .table-responsive i{
+    size: 50px;
+    margin-left: 44%; 
+    color: #992E45;
+    font-size: 50px;
+    margin-top: 10%;
+}
+
+nb-card nb-card-body .table-responsive #flecha{
+    color: white;
+}
+
+nb-card nb-card-body .table-responsive #circle{
+    display: none;
+}
+
+//efectos hover del card
+nb-card:hover{
+    background-color: #992E45;
+}
+
+nb-card:hover nb-card-body .table-responsive #icon{
+    color: white;
+}
+
+nb-card:hover nb-card-body .table-responsive #gtd-title-card{
+    color: white;
+}
+
+nb-card:hover nb-card-body .table-responsive #gtd-content-card{
+    color: white;
+}
+
+nb-card:hover nb-card-body .table-responsive hr{
+    background-color: white;
+}
+
+nb-card:hover nb-card-body .table-responsive #circle{
+    color: #FCD200;
+    margin-top: 50px;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 0%;
+    margin-right: 30%;
+}
+nb-card:hover nb-card-body .table-responsive #flecha{
+    display: none;
+}
+
+//estilos antes de móvil
+@media screen and (max-width: 1125px){
+    nb-card {
+      width: 90%;
+      height: 48px;
+      margin: 5%;
+      margin-bottom: 17px;
+      border-radius: 30px;
+    }
+    nb-card-body{
+        margin-top: 1px;
+    }
+    nb-card nb-card-body .table-responsive i{
+        margin: 0%;
+        color: #992E45;
+        font-size: 20px;
+    }
+    hr{
+        display: none;
+    }
+    #gtd-content-card{
+        display: none;
+        margin-bottom: 0%;
+    }
+    #gtd-title-card{
+        color: #992E45;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    nb-card nb-card-body .table-responsive #gtd-title-card{
+        margin-left: 30px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    nb-card nb-card-body .table-responsive #circle{
+        display: none;
+    }
+    nb-card nb-card-body .table-responsive #flecha{
+        color: #FCD200;
+        float: right;
+        font-size: 25px;
+    }
+    nb-card:hover nb-card-body .table-responsive #circle{
+        display: none;
+    }
+ }
+
+//estilos para vista en movil
+@media screen and (max-width: 1024px){
+    nb-card {
+      width: 90%;
+      height: 48px;
+      margin: 5%;
+      margin-bottom: 17px;
+      border-radius: 30px;
+    }
+    nb-card-body{
+        margin-top: 0px;
+    }
+    nb-card nb-card-body .table-responsive i{
+        margin: 0%;
+        color: #992E45;
+        font-size: 20px;
+    }
+    hr{
+        display: none;
+    }
+    #gtd-content-card{
+        display: none;
+        margin-bottom: 0%;
+    }
+    #gtd-title-card{
+        color: #992E45;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    nb-card nb-card-body .table-responsive #gtd-title-card{
+        margin-left: 30px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    nb-card nb-card-body .table-responsive #circle{
+        display: none;
+    }
+    nb-card nb-card-body .table-responsive #flecha{
+        color: #FCD200;
+        float: right;
+        font-size: 25px;
+    }
+    nb-card:hover nb-card-body .table-responsive #circle{
+        display: none;
+    }
+ }
+

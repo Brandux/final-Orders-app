@@ -1,0 +1,66 @@
+<nb-card>
+  <nb-card-header>
+    <span class="lamb-card-header">
+      <i class="fa fa-shopping-cart lamb-icon-table"></i>
+      Lista de Solicitudes
+    </span>
+    <div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+
+<div class="row">
+  <div class="col-md-12">
+    <fieldset class="lamb-fieldset-border">
+      <legend class="lamb-legend-border"><span class="fa fa-filter lamb-icon"></span> Filtros</legend>
+
+      <div class="col-md-12 ">
+        <form [formGroup]="filtersFormAssistReport" >
+          <div class="row">
+            <div class="col-md">
+              <div class="form-group">
+                <select class="form-control form-control-sm" formControlName="id_depto">
+                  <option disabled value="">Seleccionar area</option>
+                  <option  value ="0">Todas las opciones</option>
+                  <option  value ="1">Pendientes</option>
+                  <option  value ="2">Derivados</option>
+                  <option  value ="3">Culminados</option>
+                  <!-- <option *ngFor="let d of area" [value]="d.id_depto">{{d.nombre}}</option> -->
+                </select>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-group">
+                <input class="form-control  form-control-sm" format='dd/mm/yyyy' placeholder ="dd/mm/yyyy"
+                formControlName="fecha_init" ngbDatepicker type="date">
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-group">
+                <input class="form-control  form-control-sm" format='dd/mm/yyyy' placeholder ="dd/mm/yyyy"
+                formControlName="fecha_fin" ngbDatepicker type="date">
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-group">
+                  <button nbButton shape="round" 
+                      (click)="onGetData()"
+                      [disabled]="!this.filtersFormAssistReport.valid" 
+                      size="small" status="primary" 
+                      style="cursor: pointer">
+                    <i class="fa fa-filter"></i>                    
+                    Filtrar
+                  </button>
+
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  </fieldset>
+  </div>
+</div>
+
+
+</nb-card-body>
+</nb-card>

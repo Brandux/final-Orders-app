@@ -1,0 +1,16 @@
+:host {
+    text-align: left;
+    font-size: 12px;
+    
+    ul {
+      list-style-type: none;
+      margin: auto;
+      li {
+        // margin-bottom: -0.3rem;
+        .lamb-entity {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  

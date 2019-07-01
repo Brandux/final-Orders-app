@@ -1,0 +1,57 @@
+@import 'themes';
+@include nb-install-component() {
+  .lamb-icon-dashboard {
+    font-size: 1.25rem;
+    color: nb-theme(color-primary);
+  }
+  
+  .lamb-text-title-dashboard {
+    color: nb-theme(color-primary);
+    font-size: 1.4rem;
+  }
+
+
+// esto va dentro de un componente
+    nb-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.675rem 1.25rem 0.5rem 1.25rem;
+        @include nb-rtl(padding-right, 1.25rem);
+        @include nb-rtl(padding-left, 4rem);
+    }
+
+    .lamb-card-header {
+        color: nb-theme(color-primary);
+        // font-size: medium;
+    }
+
+    .lamb-acctions {
+        padding: 0px;
+        margin: auto;
+        vertical-align: middle;
+        i {
+            cursor: pointer;
+            font-size: medium;
+        }
+    }
+
+    .lamb-button-menu {
+        padding: 0.3rem 0.4rem;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover, :active, :focus {
+            background-color: nb-theme(layout-bg);
+        }
+    }
+
+    .lamb-icon-table {
+        font-size: 1rem;
+        color: nb-theme(color-primary);
+        &.lamb-list {
+            margin-left: 0.1rem;
+        }
+    }
+    // Fin
+}

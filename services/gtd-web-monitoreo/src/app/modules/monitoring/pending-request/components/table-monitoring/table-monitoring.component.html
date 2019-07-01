@@ -1,0 +1,80 @@
+<nb-card>
+  <nb-card-header>
+    <span class="lamb-card-header">
+      <i class="fa fa-shopping-cart lamb-icon-table"></i>
+      Realizar una Operación
+    </span>
+    <div>
+      <!-- <i class="fa fa-plus-circle lamb-icon-table" (click)="onCreate()"></i>
+      <i class="fa fa-list-ul lamb-icon-table lamb-list"></i> -->
+      <!-- <button nbButton size="xsmall" (click)="onCreate()">
+        <i class="fa fa-plus-circle"></i>
+        Nuevo</button> -->
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+
+    <table class="table table-striped tablaPrecios">
+      <thead>
+        <tr>
+          <th class="text-center">N</th>
+          <th class="text-center">Número de Documento</th>
+          <th>Tipo de solicitud</th>
+          <th class="text-center">Remitente</th>
+          <th class="text-center">Asunto</th>
+          <th class="text-center">Fecha</th>
+          <th class="text-center">Área destino</th>
+          <th class="text-center">Estado</th>
+          <th class="text-center">Acciones</th>
+          <th class="text-center">
+              <nb-radio value="N"></nb-radio>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td data-label="N: "  class="text-center"> 1 </td>
+          <!-- <td>{{ myOperation. }}</td> -->
+          <td data-label="Número de Documento: "  class="text-center"> D-005 </td>
+          <td data-label="Tipo de solicitud: "  > ONLINE  </td>
+          <td data-label="Remitente: "  class="text-center"> Brandux Juarez </td>
+          <td data-label="Asunto: "  class="text-center"> Certificado de nivel de Ingles </td>
+          <td data-label="Fecha: "  class="text-center">
+            <i class="fa fa-calendar text-primary"></i>
+             12/06/2019 
+            </td>
+          <td data-label="Área destino: "  class="text-center">
+            <i class="fa fa-home text-primary"></i>
+            Centro de Idiomas
+          </td>
+          <td data-label="Estado: "  class="text-center  mr-2">
+              <nb-progress-bar status="primary" placement="top" ngbTooltip=" operation.estado_nombre " [value]="80"
+                size="xs"></nb-progress-bar>
+            </td>
+          <td data-label="Acciones: "  class="text-center"> 
+              <button ngbTooltip="Ver" (click)="onDetails()" class="btn btn-warning btn-circle" >
+                  <span class=" fa fa-eye"></span>
+                </button>&nbsp; 
+                <!-- <button ngbTooltip="Aceptar" class="btn btn-success btn-circle" >
+                    <span class=" fa fa-check"></span>
+                  </button> -->
+               <button ngbTooltip="Derivar" (click)="onDerivar()" class="btn btn-primary btn-circle" >
+                <span class=" fa fa-play"></span>
+              </button>
+          </td>
+         
+
+          <td data-label="N: "  class="lamb-acctions text-center">
+              <nb-radio-group (ngModelChange) = "onFormapago($event)" name="forma_pago">
+                  <nb-radio value="N"></nb-radio>
+              </nb-radio-group>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </nb-card-body>
+</nb-card>
+
+ashdgasjgdhjasg

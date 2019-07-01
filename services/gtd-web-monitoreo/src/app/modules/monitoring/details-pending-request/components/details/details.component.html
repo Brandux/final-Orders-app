@@ -1,0 +1,55 @@
+<nb-card>
+  <nb-card-header>
+    <span class="lamb-card-header">
+      <i class="fa fa-shopping-cart lamb-icon-table"></i>
+      Registro de servicio
+    </span>
+  </nb-card-header>
+  <nb-card-body>
+
+      <!-- <div class="container content"> -->
+        <div class="row col-md-12 text-center">            
+          <div class="col-md-4">
+            <h5 class="lamb-question-one">Operacion #;</h5>
+            <p>00012</p>
+          </div>
+          <div class="col-md-4"> 
+              <h5 class="lamb-question-one" >Fecha de operación</h5>
+              <span>00/00/0000</span>
+          </div>
+          <div class="col-md-4"> 
+              <h5 class="lamb-question-one">Cuál es el motivo o concepto?</h5>
+              <span>Servicio de Acceso a Internet</span>
+          </div>
+        </div>
+
+        <div class="row  col-md-12 text-center">             <!-- responsive row has 12 columns by default -->
+          <div class="col-md-4">
+            <h5 class="lamb-question-one">Tipo de moneda</h5>
+            <span>Dólares</span>
+          </div>
+          <div class="col-md-4"> 
+              <h5 class="lamb-question-one">Nro. de recibo</h5>
+              <span>0000123456789</span>
+          </div>
+          <div class="col-md-4"> 
+              <h5 class="lamb-question-one">Cual es el importe?</h5>
+              <span>4,425.00</span>
+          </div>
+        </div>
+
+    <br><br>
+      <gtd-details-table></gtd-details-table>
+
+    <div class="col-12 row justify-content-center">
+      <button nbButton size="xsmall" (click)="onDerivar()" class="lamb-btn-borrador">
+        Derivar
+      </button> &nbsp;&nbsp;
+      <button nbButton size="xsmall"  style="cursor: pointer;">
+        Aceptar
+        <span class="fa fa-chevron-circle-right fa-lg"></span>
+      </button>
+    </div>
+
+  </nb-card-body>
+</nb-card>

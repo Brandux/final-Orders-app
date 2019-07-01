@@ -1,0 +1,28 @@
+<div class="header-container left">
+    <div class="logo-containter">
+        <div class="logo" >
+            <img class="full-color" src="assets/logos/td1.png" alt="Lamb">
+            <img class="black-and-white" src="assets/logos/td1.png" alt="Lamb">
+        </div>
+    </div>
+    <div class="logo-containter">
+        <div class="gtd-logo-upeu" >
+            <img id="upeu" class="black-and-white" src="assets/logos/logo_upeu.png" alt="Lamb">
+        </div>
+    </div>
+</div>
+
+<div class="header-container">
+    <nb-actions size="medium" class="right">
+        <nb-action class="control-item lamb-action-user">
+            <nb-user [nbContextMenu]="userMenu" nbContextMenuTag="context-menu-profile" name="Brandux Juarez" title="branduxjuarez@upeu.edu.pe"
+                [picture]="user?.picture"></nb-user>
+        </nb-action>
+        <nb-action class="control-item lamb-action-identity">
+            <gtd-identity-enterprise-menu ></gtd-identity-enterprise-menu>
+        </nb-action>
+        <!-- <nb-action class="control-item"> -->
+        <!-- <nb-search type="column-curtain" tag="search-app-shell" placeholder="Buscar..." hint="Escriba el nombre de la Aplicación"></nb-search> -->
+        <!-- </nb-action> -->
+    </nb-actions>
+</div>

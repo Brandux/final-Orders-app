@@ -1,0 +1,199 @@
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+
+.lamb-link {
+    font-weight: lighter ;
+    font-size: 22px;
+    cursor: pointer;
+    color:#FFA92D !important;
+    &:hover {
+      color: #FFA92D !important;
+      text-decoration: underline !important;
+    }
+  }
+  
+  .lamb-link2 {
+    font-weight: lighter ;
+    font-size: 22px;
+    color:#FFA92D !important;
+  }
+  
+  .sub-title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter ;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+  }
+  
+  .lamb-all{
+    background-image: url('/assets/logos/lima@2x.png') ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+    width:100%;
+    height:100%;
+  }
+  
+  .lamb-connet{
+    padding: 0%;
+    cursor: pointer;
+  }
+  
+  .logo {
+      padding: auto;
+      max-width: 100%;
+      text-align: center;
+      & .full-color {
+        width: 11rem;
+      }
+    }
+    
+    .content-login-page {
+      position: absolute;
+        top:40%;
+          left:50%;
+          width:400px;
+      margin-left:-200px;
+          height:300px;
+          margin-top:-150px;
+      padding:5px;
+      
+    }
+  
+  .logo-iasd {
+      position: fixed;
+      width: auto;
+      z-index: 0.1;
+      bottom: 1.8rem;
+  }
+  
+  .lamb-icon{
+    width: 110px;
+    height: 110px;
+  }
+  
+  .right {
+    right: 1.2rem;
+  }
+  
+  
+    /* Por debajo de 700px */
+@media screen and (max-width: 1024px){
+      .logo-iasd {
+        position: fixed;
+        z-index: 0.1;
+        left: 50%;
+        right: 50%; 
+        max-width: 100%;
+        height: auto;
+      } 
+    
+      .iasdLogo{
+        position: fixed;
+        top:50%;
+        left:50%;
+        width:80px;
+        margin-left:-50px;
+        height:100px;
+        margin-top:230px;
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .logo-icon{
+        width: 1rem;
+      }
+  }
+/*inputs estilos*/
+input[type=text],[type=password] {
+  text-align: center;
+  border-radius: 20px;
+  display: block;
+  width: 80%;
+  height: 45px;
+  padding: .375rem .75rem;
+  font-size: 15px;
+  line-height: 16px;
+  color: #fff;
+  background-color: rgba(157,157,157,0.32);
+  background-clip: padding-box;
+  box-sizing: border-box;
+  font: 400 13.3333px;
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+}
+
+input {
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    
+}
+input {
+  -webkit-appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  
+}
+input {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  margin: 0em;
+  font: 400 13.3333px;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.enter {
+  margin: 0 auto;
+  display: inline-block;
+}
+/* estilos boton ingresar*/
+.btn-large {
+  width: 60%;
+  font-family: 'Roboto', sans-serif;
+}
+.btn-primary {
+ 
+  background-image: linear-gradient(to top, rgba(77, 3, 3, 0.801), rgb(194, 0, 0));
+  color: #fff;
+}
+.btn {
+  border: none;
+  border-radius: 20px;
+  display: block;
+  padding: 14px;
+  line-height: 14px;
+  font-family: 'Roboto';
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Estilo de recuperarcion*/
+.forgot-password {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 15px;
+  text-decoration: none;
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+/*placeholder */
+
+::-webkit-input-placeholder { color: white; } 
+
+:-moz-placeholder { /* Firefox 18- */ color: white; } 
+
+::-moz-placeholder { /* Firefox 19+ */ color: white; } 
+
+:-ms-input-placeholder { color: white; }

@@ -1,0 +1,49 @@
+@import 'themes';
+@include nb-install-component() {
+    .table {
+        thead {
+            border-bottom: transparent solid 0px !important;
+        }
+    }
+
+    nb-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.675rem 1.25rem 0.5rem 1.25rem;
+        @include nb-rtl(padding-right, 1.25rem);
+        @include nb-rtl(padding-left, 4rem);
+    }
+
+    .lamb-card-header {
+        color: nb-theme(color-primary);
+        // font-size: medium;
+    }
+
+    .lamb-icon-table {
+        font-size: 1.2rem;
+        color: nb-theme(color-primary);
+        &.lamb-list {
+            margin-left: 0.1rem;
+        }
+    }
+
+    .lamb-search-add2{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        & .lamb-btn-search{
+            background-color: nb-theme(color-primary);
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
+        }
+    }
+
+    
+
+}

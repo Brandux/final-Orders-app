@@ -1,0 +1,171 @@
+@import 'themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+// @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global//breakpoints';
+
+@include nb-install-component() {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+    
+  .logo {
+    padding: 0 nb-theme(padding);
+    font-size: 1.75rem;
+    font-weight: nb-theme(font-weight-bolder);
+    white-space: nowrap;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 5.6rem;
+
+      &.black-and-white {
+        display: block;
+      }
+      
+      &.full-color {
+        display: none;
+      }
+      
+      @include nb-for-theme(lamb-default) {
+        &.black-and-white {
+          display: none;
+        }
+        
+        &.full-color {
+          display: block;
+        }
+      }
+    }
+
+    span {
+      font-weight: nb-theme(font-weight-normal);
+    }
+  }
+
+  .gtd-logo-upeu {
+    padding: 0 nb-theme(padding);
+    font-size: 1.75rem;
+    font-weight: nb-theme(font-weight-bolder);
+    white-space: nowrap;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 3.6rem;
+
+      &.black-and-white {
+        display: block;
+      }
+      
+      &.full-color {
+        display: none;
+      }
+      
+      @include nb-for-theme(lamb-default) {
+        &.black-and-white {
+          display: none;
+        }
+        
+        &.full-color {
+          display: block;
+        }
+      }
+    }
+
+    span {
+      font-weight: nb-theme(font-weight-normal);
+    }
+  }
+
+
+  .left {
+    display: flex;
+    width: 100%;
+    order: 0;
+    flex-direction: row;
+    .gtd-logo-upeu {
+      border-left: 1px solid nb-theme(separator);
+    }
+    
+    
+  }
+  
+  .right {
+    order: 1;
+    flex-direction: row-reverse;
+    .logo {
+      border-right: 1px solid nb-theme(separator);
+    }
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+    white-space: nowrap;
+
+    .logo-containter {
+      display: flex;
+      align-items: center;
+    }
+
+    .navigation {
+      font-size: 2.5rem;
+      text-decoration: none;
+
+      i {
+        display: block;
+      }
+    }
+
+    &.right {
+      .navigation { 
+        padding-left: nb-theme(padding);
+      }
+    }
+    &.left {
+      .navigation {
+        padding-right: nb-theme(padding);
+       }
+    }
+  }
+
+  nb-actions {
+    &.right {
+      nb-action {
+        border-left: 1px solid nb-theme(separator) !important;
+        &:last-child {
+          border-left: none !important;
+        }
+      }
+    }
+  }
+
+  // @include media-breakpoint-down(xs) {}
+  // @include media-breakpoint-down(is) {}
+  @include media-breakpoint-down(sm) {
+    nb-user /deep/ .user-name {
+      display: none;
+    }
+    .lamb-action-identity {
+      display: none;
+    }
+  }
+  // @include media-breakpoint-down(md) {}
+  // @include media-breakpoint-down(lg) {}
+  // @include media-breakpoint-down(xl) {}
+  // @include media-breakpoint-down(xxl) {}
+  // @include media-breakpoint-down(xxxl) {}
+
+  //estilos para vista en movil
+@media screen and (max-width: 1024px){
+  #upeu{
+    display: none;
+  }
+}
+}

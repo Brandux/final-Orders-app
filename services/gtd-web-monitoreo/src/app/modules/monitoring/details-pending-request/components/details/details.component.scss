@@ -1,0 +1,71 @@
+@import 'themes';
+@include nb-install-component() {
+    .table {
+        thead {
+            border-bottom: transparent solid 0px !important;
+        }
+    }
+
+    nb-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.675rem 1.25rem 0.5rem 1.25rem;
+        @include nb-rtl(padding-right, 1.25rem);
+        @include nb-rtl(padding-left, 4rem);
+    }
+
+    .lamb-question-one {
+        color: nb-theme(color-primary);
+        font-weight: lighter ;
+    }
+
+    .lamb-footer-buttons {
+        justify-content: space-between;
+    }
+    .lamb-footer-button-left {
+        justify-content: flex-start;
+    }
+
+    .lamb-btn-borrador{
+        background-color: white;
+        color: black;
+        border: 1px solid #555555;
+        cursor: pointer;
+        width: 150px;
+    }
+    
+    .lamb-btn-borrador:hover{
+        background-color: #666;
+        color: white;
+    }
+
+
+    .lamb-card-header {
+        // font-family: 'Lato', sans-serif;
+        color: nb-theme(color-primary);
+        font-size: 1.2rem;
+        font-weight: lighter ;
+    }
+
+    .lamb-icon-table {
+        font-size: 1.5rem;
+        color: nb-theme(color-primary);
+        &.lamb-list {
+            margin-left: 0.1rem;
+        }
+    }
+
+    .lamb-acctions {
+        padding: 0px;
+        margin: auto;
+        vertical-align: middle;
+        i {
+            // font-size: xx-large;
+            cursor: pointer;
+            font-size: medium;
+            margin-right: 0.6rem;
+        }
+    }
+
+}
