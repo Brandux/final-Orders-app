@@ -3,6 +3,7 @@
 
 import unittest
 import coverage
+import datetime
 
 from flask.cli import FlaskGroup
 
@@ -42,9 +43,17 @@ def test():
 
 @cli.command('seed_db')
 def seed_db():
-    """Sembrado en la base de datos"""
-    db.session.add(Customer(name='kevinmogollon'))
-    db.session.add(Customer(name='abelhuanca'))
+    """Sembrado en la base de datos: Customers"""
+    db.session.add(Customer(name='brandux'))
+    db.session.add(Customer(name='toshi'))
+    """Sembrando en base datos: Producto"""
+    db.session.add(Product(name='Pan Integral'))
+    db.session.add(Product(name='Palitos Union'))
+    """Sembrando datos en base de datos: orders"""
+    db.session.add(Order(customer_id=1, date=datetime.datetime.now()))
+    """Sembrando datos en item"""
+    db.session.add(Item(order_id=1, product_id=1, quantity= 20))
+
     db.session.commit()
 
 @cli.command()

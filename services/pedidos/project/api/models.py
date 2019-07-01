@@ -1,12 +1,12 @@
 # services/pedidos/project/api/models.py
 
 
-from sqlalchemy.sql import func
+#  from sqlalchemy.sql import func
 from datetime import datetime
 from project import db
 
 
-#modelo
+#  modelo
 class Customer(db.Model):
     __tablename__ = 'customers'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -57,7 +57,7 @@ class Order(db.Model):
 
     def __init__(self, customer_id, date):
         self.customer_id = customer_id
-        self.date = date                       
+        self.date = date
 
 
 class Item(db.Model):

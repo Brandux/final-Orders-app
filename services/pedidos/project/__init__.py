@@ -1,17 +1,18 @@
-#services/pedidos/project/__init__.py
+# services/pedidos/project/__init__.py
 
 
-import os  #nuevo
+import os  # nuevo
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_debugtoolbar import DebugToolbarExtension
 
-
-#iinstanciando la db
+# iinstanciando la db
 db = SQLAlchemy()
+toolbar = DebugToolbarExtension()
+# new
 
 
-# new 
 def create_app(script_info=None):
 
     # instanciamos la app
@@ -22,7 +23,8 @@ def create_app(script_info=None):
     app.config.from_object(app_settings)
 
 # establecemos extensiones
-    db.init_app(app);
+    db.init_app(app)
+    toolbar.init_app(app)
 
 # registrar blueprints
     from project.api.pedidos import pedidos_blueprint
@@ -33,7 +35,4 @@ def create_app(script_info=None):
     def ctx():
         return {'app': app, 'db': db}
 
-    return app;
-
-
-
+    return app
